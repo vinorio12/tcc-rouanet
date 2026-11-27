@@ -1108,14 +1108,14 @@ const HL={
  lacuna:[['#lacuna .law .art'],['#lacuna .miss b'],['#lacuna .tcu h4']],
  pnab:[[],['#phead .num','#psel .it:nth-child(2) small'],['#phead .num']]
 };
-let hlOn=true; try{hlOn=localStorage.getItem('deckHL')!=='0';}catch(e){}
+let hlOn=false;
 function drawHL(el){
   $$('.hlon').forEach(e=>e.classList.remove('hlon'));
   document.body.classList.toggle('hl-off',!hlOn);
   if(!hlOn) return;
   ((HL[el.id]||[])[step]||[]).forEach(sel=>$$(sel).forEach(e=>{void e.offsetWidth; e.classList.add('hlon');}));
 }
-function toggleHL(){hlOn=!hlOn; try{localStorage.setItem('deckHL',hlOn?'1':'0');}catch(e){} drawHL(slides[cur]); $('#tH').classList.toggle('off',!hlOn);}
+function toggleHL(){}
 
 /* mapa */
 const MODES=[
